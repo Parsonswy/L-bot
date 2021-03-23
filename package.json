@@ -1,0 +1,25 @@
+{
+  "name": "l-bot",
+  "version": "1.0.0",
+  "description": "L",
+  "main": "src/index.js",
+  "scripts": {
+    "run": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parsonswy/L-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Parsonswy/L-bot/issues"
+  },
+  "homepage": "https://github.com/Parsonswy/L-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "eslint": "^7.22.0",
+    "js-yaml": "^4.0.0"
+  }
+}
