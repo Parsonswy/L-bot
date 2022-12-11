@@ -3,12 +3,12 @@ const SporadicShowOfL = {
 
 	if: (event) => true,
 
-	on: (event) => {
-		SporadicShowOfL.lCount += event.content.match(/l/gi).length;
+	on: async (event) => {
+		SporadicShowOfL.lCount += (event.content.match(/l/gmi) || []).length;
 
 		if (SporadicShowOfL.lCount >= global.l.getConfig().getLReactionThreshold()) {
 			SporadicShowOfL.lCount -= global.l.getConfig().getLReactionThreshold();
-			event.react(global.l.getConfig().getLReactionEmote());
+			await event.react(global.l.getConfig().getLReactionEmote());
 		}
 	}
 }

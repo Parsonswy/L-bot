@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const Configuration = require('./Configuration');
 const EventConditions = require('./event-router/Conditions');
 const EventRouter = require('./event-router/EventRouter');
+const Nums = require('./listeners/message/Nums');
 const SporadicShowOfL = require('./listeners/message/SporadicShowOfL');
 
 class L {
@@ -26,6 +27,7 @@ class L {
 		const MessageRouter = new EventRouter();
 
 		MessageRouter.addRoute(EventConditions.isTextChannelMessage, SporadicShowOfL);
+		MessageRouter.addRoute((event) => EventConditions.isTextChannelMessage(event) && Nums.if(event), Nums);
 
 		this.discord.on('message', (m) => MessageRouter.on(m));
 		

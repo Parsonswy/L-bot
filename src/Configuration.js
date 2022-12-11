@@ -8,6 +8,8 @@ class Configuration {
 
 	getLReactionThreshold() { return this.config.l_reaction_threshold; }
 	getLReactionEmote() { return this.config.l_reaction_emote; }
+	getNumsReactionEmote() { return this.config.nums_reaction_emote; }
+	getNumsPingGroup() { return this.config.nums_ping_group; }
 
 	constructor(configFilePath) {
 		this.configFilePath = configFilePath;

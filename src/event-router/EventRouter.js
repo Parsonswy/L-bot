@@ -17,13 +17,16 @@ class EventRouter {
 		this.addRoute(commandModule.if, commandModule);
 	}
 
-	on(event) {
+	async on(event) {
 		for(let i=0; i<this.routeKeys.length; i++) {
 			const routePath = this.routes[this.routeKeys[i]];
 
 			if (this.routes[this.routeKeys[i]].if(event)) {
 				for(let j=0; j<routePath.routes.length; j++) {
-					routePath.routes[j].on(event);
+					const action = routePath.routes[j].on(event);
+					if (action instanceof Promise) {
+						await action;
+					}
 				}
 			}
 		}
