@@ -9,7 +9,7 @@ const Nums = {
 		if (now.getHours() < 4) {
 			rounds = 4 - now.getHours();
 		}
-		const nextHourToday = new Date(`${now.getFullYear()} ${now.getMonth()} ${now.getDate()} ${start}:00:00`);
+		const nextHourToday = new Date(`${now.getFullYear()} ${now.getMonth()+1} ${now.getDate()} ${start}:00:00`);
 		
 		await event.channel.send(`<@${global.l.getNumsPingGroup()}>`);
 		for (let i=0; i<rounds; i++) {
